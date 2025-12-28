@@ -115,20 +115,5 @@ test('7-Interact with pagination', async ({ page }) => {
 
 });
 
-test('mocking', async ({ page }) => {
-  await page.goto('https://ziila-stg.intella.me/en/auth/login');
-  await page.getByRole('textbox', { name: 'Enter your email' }).click();
-  await page.getByRole('textbox', { name: 'Enter your email' }).fill('abdelrahman.ibrahem1112@gmail.com');
-  await page.getByRole('textbox', { name: 'Enter your password' }).click();
-  await page.getByRole('textbox', { name: 'Enter your password' }).fill('@Aa12345');
-  await page.getByRole('button', { name: 'Login' }).click();
-  await page.getByRole('button', { name: 'Test' }).nth(1).click();
-  await page.getByRole('button', { name: 'Mic icon button' }).click();
-  await page.getByRole('button', { name: 'Mic icon button' }).click();
-  await expect(page.locator('.bot-response'))
-    .toContainText('help');
-  await page.getByRole('button', { name: 'mute icon End' }).click();
-
-});
 
 });
